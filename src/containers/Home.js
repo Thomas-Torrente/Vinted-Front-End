@@ -3,15 +3,11 @@ import React from "react";
 import Post from "../components/Post";
 
 const Home = ({ data, setData }) => {
-  return (
-    // ca sinon afficher le code normal
-    <>
-      {/* ci dessous le code normal */}
-      <div>
-        <Post data={data} setData={setData} />
-      </div>
-    </>
-  );
+  {
+    data.offers.map((offre, index) => {
+      return <Post offre={offre} />;
+    });
+  }
 };
 
 export default Home;
