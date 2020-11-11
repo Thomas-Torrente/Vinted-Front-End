@@ -1,11 +1,43 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "./App.css";
-
+import {
+  BrowserRouter as router,
+  Switch,
+  Route,
+  Router,
+} from "react-router-dom";
+// BrowserRouter as router permet de transforméer browerRouter en router car c trop long
+import Home from "./containers/Home";
 function App() {
-  return (
-    <div>
-      Hello from <a href="https://www.lereacteur.io">Le Reacteur !</a>
-    </div>
+  const [isLoading, setIsLoading] = useState(true);
+  const [data, setData] = useState({});
+
+  const fetchData = async () => {
+    const response = await axios.get(
+      "https://lereacteur-vinted-api.herokuapp.com/offers"
+    );
+    setData(response.data);
+    setIsLoading(false);
+  };
+  useEffect(() => {
+    // Permet de n'afficher qu'une seule fois dans la condition
+    fetchData();
+  }, []);
+  return isLoading ? (
+    <div>En cours de chargemment</div>
+  ) : (
+    <Router>
+      <Switch>
+        <Route path="/offers">
+          // permet de faire un lien direct vers
+          {/* <Offers /> */}
+        </Route>
+        <Route path="/">
+          <Home data={data} setData={setData} />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
