@@ -1,12 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./App.css";
-import {
-  BrowserRouter as router,
-  Switch,
-  Route,
-  Router,
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 // BrowserRouter as router permet de transforméer browerRouter en router car c trop long
 import Home from "./containers/Home";
 function App() {
@@ -29,10 +24,7 @@ function App() {
   ) : (
     <Router>
       <Switch>
-        <Route path="/offers">
-          // permet de faire un lien direct vers
-          {/* <Offers /> */}
-        </Route>
+        {/* <Route path="/offers"><Offers /></Route> */}
         <Route path="/">
           <Home data={data} setData={setData} />
         </Route>

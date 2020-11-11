@@ -3,7 +3,15 @@ import React from "react";
 const Post = ({ data }) => {
   return (
     <>
-      <div>{data.offers}</div>
+      {data.offers.map((offre, i) => {
+        return (
+          <>
+            <div>
+              <img src={offre.product_pictures.secure_url} alt="" />
+            </div>
+          </>
+        );
+      })}
     </>
   );
 };
