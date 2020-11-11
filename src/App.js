@@ -26,7 +26,7 @@ function App() {
     <Router>
       <Switch>
         <Route path="/offer">
-          <Offer data={data} />
+          <Offer data={data} setData={setData} />
         </Route>
         <Route path="/">
           <Home data={data} setData={setData} />

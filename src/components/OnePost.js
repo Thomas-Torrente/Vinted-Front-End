@@ -3,7 +3,17 @@ import React from "react";
 const OnePost = ({ data }) => {
   return (
     <>
-      <div></div>
+      {data.offers.map((offre, index) => {
+        return (
+          <>
+            <div>
+              <img src={offre.product_image.secure_url} alt="" />
+            </div>
+
+            {offre.product_details.map()}
+          </>
+        );
+      })}
     </>
   );
 };
