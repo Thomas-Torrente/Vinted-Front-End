@@ -4,6 +4,7 @@ import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 // BrowserRouter as router permet de transforméer browerRouter en router car c trop long
 import Home from "./containers/Home";
+import Offer from "./containers/Offer";
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState({});
@@ -24,7 +25,9 @@ function App() {
   ) : (
     <Router>
       <Switch>
-        {/* <Route path="/offers"><Offers /></Route> */}
+        <Route path="/offer">
+          <Offer data={data} />
+        </Route>
         <Route path="/">
           <Home data={data} setData={setData} />
         </Route>
