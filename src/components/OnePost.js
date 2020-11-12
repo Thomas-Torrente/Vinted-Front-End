@@ -6,7 +6,6 @@ const OnePost = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState({});
   const { id } = useParams();
-  console.log("id========>", id);
 
   const fetchData = async () => {
     const response = await axios.get(

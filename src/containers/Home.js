@@ -21,8 +21,16 @@ const Home = () => {
   return isLoading ? (
     <div>En cours de chargemment</div>
   ) : (
-    // ca sinon afficher le code normal
     <>
+      <div className="coverHome">
+        <img
+          className="formeCoverHome"
+          src="https://lereacteur-vinted.netlify.app/static/media/forme.42d6cec6.svg"
+          alt=""
+        />
+      </div>
+      {/* // ca sinon afficher le code normal */}
+
       {/* ci dessous le code normal */}
       <div>
         <Post data={data} setData={setData} />

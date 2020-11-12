@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 // BrowserRouter as router permet de transforméer browerRouter en router car c trop long
+import Cookies from "js-cookie";
+
 import Home from "./containers/Home";
 import Offer from "./containers/Offer";
 import Signup from "./containers/Signup";
 import Header from "./components/Header";
 function App({ data, setData }) {
+  const [token, setToken] = useState("");
   return (
     <Router className="contenair">
       <Header />

@@ -3,16 +3,30 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <>
-      <div className="header">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/2/29/Vinted_logo.png"
-          alt=""
-        />
+      <div className="header-contenair">
+        <Link to="/">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/2/29/Vinted_logo.png"
+            alt=""
+          />
+        </Link>
 
-        <input type="text" placeholder="Recherche des articles " />
-        <button>S'inscrire</button>
-        <button>Se connecter</button>
-        <button>Vends tes articles</button>
+        <input
+          type="text"
+          placeholder="Recherche des articles "
+          className="search-input"
+        />
+        <Link to="/signup">
+          <button className="header-button button-login-signup button-signup">
+            S'inscrire
+          </button>
+        </Link>
+        <button className="header-button button-login-signup">
+          Se connecter
+        </button>
+        <button className="header-button button-sold">
+          Vends tes articles
+        </button>
       </div>
     </>
   );

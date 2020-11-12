@@ -1,17 +1,10 @@
 import React from "react";
 
 const FormSignUp = (props) => {
-  const whenSubmit = (event) => {
-    event.preventDefault();
-
-    if (!props.username || !props.tel || !props.password) {
-      alert("Merci de remplirs tous les champs correctement");
-    }
-  };
   return (
     <>
       <div>
-        <form onSubmit={whenSubmit}>
+        <form onSubmit={props.whenSubmit}>
           <input
             type="email"
             placeholder="Votre adresse Email"
