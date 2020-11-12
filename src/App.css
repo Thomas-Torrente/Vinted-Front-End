@@ -1,1 +1,14 @@
-/* Other rules */
+.contenair {
+  max-height: 100vh;
+  margin: 0 auto;
+  max-width: 0 auto;
+}
+
+.header {
+  height: 100px;
+  width: 100%;
+}
+
+.header img {
+  max-width: 78px;
+}
