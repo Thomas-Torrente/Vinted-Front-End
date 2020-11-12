@@ -4,10 +4,10 @@ import axios from "axios";
 import Cookies from "js-cookie";
 
 const Signup = () => {
-  const [username, setUsername] = useState("eudbejejbn");
-  const [email, setEmail] = useState("thomas.djjdjejkekj@gmail.clm");
-  const [password, setPassword] = useState("kekekekekeke");
-  const [tel, setTel] = useState("88888888888");
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [tel, setTel] = useState("");
   const [token, setToken] = useState("");
 
   const whenSubmit = async (event) => {

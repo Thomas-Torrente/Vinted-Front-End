@@ -8,6 +8,7 @@ import Cookies from "js-cookie";
 import Home from "./containers/Home";
 import Offer from "./containers/Offer";
 import Signup from "./containers/Signup";
+import Login from "./containers/Login";
 import Header from "./components/Header";
 function App({ data, setData }) {
   const [token, setToken] = useState("");
@@ -21,6 +22,9 @@ function App({ data, setData }) {
         </Route>
         <Route path="/signup">
           <Signup />
+        </Route>
+        <Route path="/login">
+          <Login />
         </Route>
         <Route path="/">
           <Home data={data} setData={setData} />

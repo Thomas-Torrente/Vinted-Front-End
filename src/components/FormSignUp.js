@@ -3,8 +3,9 @@ import React from "react";
 const FormSignUp = (props) => {
   return (
     <>
-      <div>
-        <form onSubmit={props.whenSubmit}>
+      <div className="signupContenair">
+        <h2>S'inscrire</h2>
+        <form onSubmit={props.whenSubmit} className="signupForm">
           <input
             type="email"
             placeholder="Votre adresse Email"

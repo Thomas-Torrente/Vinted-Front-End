@@ -90,9 +90,6 @@
   object-fit: cover;
 }
 
-.cardDetails {
-}
-
 .priceCards span:first-child {
   font-size: 14px;
 }
@@ -100,4 +97,39 @@
 .nameProduct span:not(:first-child) {
   font-size: 12px;
   color: #999;
+}
+
+.signupContenair,
+.signupForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.signupForm {
+  width: 275px;
+  margin: auto;
+}
+
+.signupContenair {
+  justify-content: center;
+  text-align: center;
+}
+
+.signupForm input {
+  border: none;
+  border-bottom: 1px solid #fcced3;
+  height: 35px;
+  margin-bottom: 20px;
+}
+
+.signupForm button {
+  background-color: #2cb1ba;
+  height: 45px;
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
+  margin-top: 20px;
 }
