@@ -15,8 +15,8 @@ const Login = () => {
       const sendSignup = await axios.post(
         "https://vinted-api-thomas.herokuapp.com/user/login",
         {
-          email: sendSignup.data.email,
-          password: sendSignup.data.password,
+          email: email,
+          password: password,
         }
       );
       console.log(sendSignup.data.token);
@@ -30,7 +30,7 @@ const Login = () => {
           email={email}
           setEmail={setEmail}
           password={password}
-          setPasword={setPasword}
+          setPassword={setPasword}
           whenSubmit={whenSubmit}
         />
       </div>
