@@ -21,9 +21,12 @@ const Header = () => {
             S'inscrire
           </button>
         </Link>
-        <button className="header-button button-login-signup">
-          Se connecter
-        </button>
+
+        <Link to="login">
+          <button className="header-button button-login-signup">
+            Se connecter
+          </button>
+        </Link>
         <button className="header-button button-sold">
           Vends tes articles
         </button>
