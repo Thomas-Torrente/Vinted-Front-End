@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import LoginForm from "../components/LoginForm";
 import axios from "axios";
+import { useHistory } from "react-router-dom";
 
 const Login = ({ setUser, token }) => {
+  const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPasword] = useState("");
 
@@ -19,7 +21,10 @@ const Login = ({ setUser, token }) => {
           password: password,
         }
       );
-      console.log(sendSignup.data.token);
+      setUser(sendSignup.data.token);
+      history.push("/");
+
+      // console.log(sendSignup.data.token);
     }
   };
 
@@ -32,8 +37,6 @@ const Login = ({ setUser, token }) => {
           password={password}
           setPassword={setPasword}
           whenSubmit={whenSubmit}
-          setUser={setUser}
-          token={token}
         />
       </div>
     </>

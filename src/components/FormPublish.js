@@ -3,6 +3,8 @@ import React from "react";
 const FormPublish = (props) => {
   return (
     <>
+      <div className="contenair-publish"></div>
+      <h2>Vends tes articles</h2>
       <form onSubmit={props.whenSubmit}>
         <input
           type="file"
