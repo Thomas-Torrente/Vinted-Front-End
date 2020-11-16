@@ -9,6 +9,7 @@ import Home from "./containers/Home";
 import Offer from "./containers/Offer";
 import Signup from "./containers/Signup";
 import Login from "./containers/Login";
+import Publish from "./containers/Publish";
 import Header from "./components/Header";
 function App({ data, setData }) {
   const [token, setToken] = useState("");
@@ -25,6 +26,9 @@ function App({ data, setData }) {
         </Route>
         <Route path="/login">
           <Login />
+        </Route>
+        <Route path="/publish">
+          <Publish />
         </Route>
         <Route path="/">
           <Home data={data} setData={setData} />
