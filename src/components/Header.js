@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-const Header = () => {
+const Header = ({ token, setUser }) => {
   return (
     <>
       <div className="header-contenair">
@@ -10,26 +10,42 @@ const Header = () => {
             alt=""
           />
         </Link>
-
         <input
           type="text"
           placeholder="Recherche des articles "
           className="search-input"
         />
-        <Link to="/signup">
-          <button className="header-button button-login-signup button-signup">
-            S'inscrire
-          </button>
-        </Link>
-
-        <Link to="login">
-          <button className="header-button button-login-signup">
-            Se connecter
-          </button>
-        </Link>
-        <button className="header-button button-sold">
-          Vends tes articles
-        </button>
+        {token ? (
+          // si le token existe alors afficher :
+          <>
+            <Link to="publish">
+              <button className="header-button button-sold">
+                Vends tes articles
+              </button>
+            </Link>
+            <button
+              onClick={() => {
+                setUser(null);
+              }}
+            >
+              Se déconnecter
+            </button>
+          </>
+        ) : (
+          <>
+            {/* // Sinon afficher ca */}
+            <Link to="/signup">
+              <button className="header-button button-login-signup button-signup">
+                S'inscrire
+              </button>
+            </Link>
+            <Link to="login">
+              <button className="header-button button-login-signup">
+                Se connecter
+              </button>
+            </Link>
+          </>
+        )}
       </div>
     </>
   );

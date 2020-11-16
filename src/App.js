@@ -12,10 +12,20 @@ import Login from "./containers/Login";
 import Publish from "./containers/Publish";
 import Header from "./components/Header";
 function App({ data, setData }) {
-  const [token, setToken] = useState("");
+  const [token, setToken] = useState(Cookies.get("userToken") || null);
+  const setUser = (tokenToSet) => {
+    if (tokenToSet) {
+      Cookies.set("userToken", tokenToSet);
+      setToken(tokenToSet);
+    } else {
+      Cookies.remove("userToken");
+      setToken(null);
+    }
+  };
+
   return (
     <Router className="contenair">
-      <Header />
+      <Header token={token} setUser={setUser} />
       <Switch>
         <Route path="/offer/:id">
           {/* apres le offer on dit dans le one post que la parametre de use params c lui qui est dans le lien apres avoir cliquer sur une des cartes */}
@@ -25,7 +35,7 @@ function App({ data, setData }) {
           <Signup />
         </Route>
         <Route path="/login">
-          <Login />
+          <Login setUser={setUser} />
         </Route>
         <Route path="/publish">
           <Publish />

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import LoginForm from "../components/LoginForm";
 import axios from "axios";
 
-const Login = () => {
+const Login = ({ setUser, token }) => {
   const [email, setEmail] = useState("");
   const [password, setPasword] = useState("");
 
@@ -32,6 +32,8 @@ const Login = () => {
           password={password}
           setPassword={setPasword}
           whenSubmit={whenSubmit}
+          setUser={setUser}
+          token={token}
         />
       </div>
     </>

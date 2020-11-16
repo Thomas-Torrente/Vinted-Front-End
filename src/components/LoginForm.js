@@ -1,6 +1,6 @@
 import React from "react";
-
-const LoginForm = (props) => {
+import { useHistory } from "react-router-dom";
+const LoginForm = (props, { setUser, token }) => {
   return (
     <>
       <div className="signupContenair">
@@ -23,7 +23,14 @@ const LoginForm = (props) => {
               props.setPassword(event.target.value);
             }}
           />
-          <button type="submit">Se connecter</button>
+          <button
+            onClick={() => {
+              setUser(token);
+              useHistory.pushState("/");
+            }}
+          >
+            Se connecter
+          </button>
         </form>
       </div>
     </>
