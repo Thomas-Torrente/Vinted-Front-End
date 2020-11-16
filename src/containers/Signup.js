@@ -11,7 +11,7 @@ const Signup = () => {
   const [token, setToken] = useState("");
 
   const whenSubmit = async (event) => {
-    console.log("ejekjekj");
+    console.log("Requete envoyer à l 'appuie du bouton envoyer");
     event.preventDefault();
 
     if (!username || !tel || !password) {

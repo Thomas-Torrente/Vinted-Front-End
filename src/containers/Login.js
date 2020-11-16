@@ -9,7 +9,7 @@ const Login = () => {
   const whenSubmit = async (event) => {
     event.preventDefault();
 
-    if (email) {
+    if (!email) {
       alert("Votre adresse email ou votre mot de passe est incorrect");
     } else {
       const sendSignup = await axios.post(

@@ -7,7 +7,7 @@ const LoginForm = (props) => {
         <h2>Se connecter</h2>
         <form onSubmit={props.whenSubmit} className="signupForm">
           <input
-            type="text"
+            type="email"
             placeholder="Votre adresse Email"
             value={props.email}
             onChange={(event) => {
