@@ -3,7 +3,7 @@ import React from "react";
 const FormPublish = (props) => {
   return (
     <>
-      <form action="">
+      <form onSubmit={props.whenSubmit}>
         <input
           type="file"
           onChange={(event) => {
@@ -67,7 +67,7 @@ const FormPublish = (props) => {
             props.setPrice(event.target.value);
           }}
         />
-        <input type="checkbox">Je suis intéressé(e) par les échanges</input>
+        <button type="submit">Envoyer</button>
       </form>
     </>
   );
