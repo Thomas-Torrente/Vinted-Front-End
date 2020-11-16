@@ -10,10 +10,20 @@ const Publish = () => {
   const [color, setColor] = useState("");
   const [condition, setCondition] = useState("");
   const [city, setCity] = useState("");
-  const [price, setPrice] = useState("");
+  const [price, setPrice] = useState();
 
   const whenSubmit = async (event) => {
     event.preventDefault();
+    const formData = new FormData();
+    formData.append("files", file);
+    formData.append("title", title);
+    formData.append("description", description);
+    formData.append("brand", brand);
+    formData.append("size", size);
+    formData.append("color", color);
+    formData.append("condition", condition);
+    formData.append("city", city);
+    formData.append("price", price);
 
     if (
       !title &&
@@ -27,21 +37,10 @@ const Publish = () => {
       !price
     ) {
       alert("Merci de remplirs correctement TOUS LES CHAMPS");
-      //   else if (!userNotConnecter) {"/"}
     } else {
       const sendPublish = await axios.post(
         "https://vinted-api-thomas.herokuapp.com/offer/publish",
-        {
-          title: title,
-          file: file,
-          description: description,
-          brand: brand,
-          size: size,
-          color: color,
-          condition: condition,
-          city: city,
-          price: price,
-        }
+        formData
       );
     }
   };
@@ -66,8 +65,7 @@ const Publish = () => {
           city={city}
           setCity={setCity}
           price={price}
-          set
-          price={setPrice}
+          setPrice={setPrice}
           whenSubmit={whenSubmit}
         />
       </div>

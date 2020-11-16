@@ -24,7 +24,7 @@ const Header = ({ token, setUser }) => {
               </button>
             </Link>
             <button
-              className="header-button button-login-signup"
+              className="header-button button-login-signup disconnect"
               onClick={() => {
                 setUser(null);
               }}
