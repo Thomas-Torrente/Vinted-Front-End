@@ -151,3 +151,55 @@
   width: 1280px;
   margin: 0 auto;
 }
+
+/* ONE OFFER */
+.offer-body {
+  height: calc(100vh - 60px);
+  background-color: #ebedee;
+}
+
+.offer-contenair {
+  width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  padding: 30px;
+  grid-gap: 30px;
+  gap: 30px;
+}
+
+.offer-images {
+  display: block;
+}
+.offer-image {
+  height: 600px;
+  object-fit: cover;
+}
+
+.offer-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #fff;
+  width: 320px;
+  padding: 40px;
+}
+
+.offer-price {
+  font-size: 24px;
+  line-height: 32px;
+  color: #111;
+}
+
+.offer-info button {
+  color: #fff;
+  background: #09b1ba;
+  border: 1px solid #09b1ba;
+  border-radius: 4px;
+  width: 100%;
+  font-size: 16px;
+  height: 36px;
+  padding: 0 16px;
+  line-height: 36px;
+  margin-top: 32px;
+}
