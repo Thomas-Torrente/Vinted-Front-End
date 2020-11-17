@@ -27,7 +27,7 @@ function App({ data, setData }) {
     <Router className="contenair">
       <Header token={token} setUser={setUser} />
       <Switch>
-        <Route path="/offer/:id">
+        <Route path="/offers/:id">
           {/* apres le offer on dit dans le one post que la parametre de use params c lui qui est dans le lien apres avoir cliquer sur une des cartes */}
           <Offer data={data} setData={setData} />
         </Route>

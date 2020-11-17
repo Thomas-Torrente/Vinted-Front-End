@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import FormPublish from "../components/FormPublish";
 import axios from "axios";
-const Publish = () => {
+const Publish = ({ token }) => {
   const [file, setFile] = useState();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -11,11 +11,12 @@ const Publish = () => {
   const [condition, setCondition] = useState("");
   const [city, setCity] = useState("");
   const [price, setPrice] = useState();
-
+  // console.log(file);
   const whenSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
-    formData.append("files", file);
+
+    formData.append("picture", file[0]);
     formData.append("title", title);
     formData.append("description", description);
     formData.append("brand", brand);
@@ -40,8 +41,15 @@ const Publish = () => {
     } else {
       const sendPublish = await axios.post(
         "https://vinted-api-thomas.herokuapp.com/offer/publish",
-        formData
+        formData,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "multipart/form-data",
+          },
+        }
       );
+      console.log(sendPublish.data);
     }
   };
   return (

@@ -9,7 +9,7 @@ const OnePost = () => {
 
   const fetchData = async () => {
     const response = await axios.get(
-      `https://lereacteur-vinted-api.herokuapp.com/offer/${id}`
+      `https://vinted-api-thomas.herokuapp.com/offers/${id}`
       // On dit que l'on se sert de l'id qu'il y a dans l'url apres avoir cliqué sur un des produits est celui qu'on va utiliser pour voir les données
     );
     setData(response.data);
@@ -20,12 +20,13 @@ const OnePost = () => {
     fetchData();
   }, []);
   return isLoading ? (
-    <div>En cours de chargemment</div>
+    <div>En cours de chargement</div>
   ) : (
     <>
       <div>
         <p>{data.product_name}</p>
-        <p>{data.product_price} euro</p>
+
+        <p>{data.product_price} €</p>
         <img src={data.product_image.secure_url} alt={data.product_name} />
         {data.product_details.map((detail, index) => {
           // on fait une boucle sur le tableau product details

@@ -9,7 +9,7 @@ const Post = ({ data }) => {
           // console.log(offre._id);
 
           return (
-            <Link to={`/offer/${offre._id}`}>
+            <Link to={`/offers/${offre._id}`}>
               <div key={offre._id}>
                 <div className="card">
                   <img src={offre.product_image.secure_url} alt="" />
