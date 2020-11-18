@@ -31,7 +31,12 @@ function App({ data, setData }) {
       <Switch>
         <Route path="/offers/:id">
           {/* apres le offer on dit dans le one post que la parametre de use params c lui qui est dans le lien apres avoir cliquer sur une des cartes */}
-          <Offer data={data} setData={setData} />
+          <Offer
+            data={data}
+            setData={setData}
+            token={token}
+            setUser={setUser}
+          />
         </Route>
         <Route path="/signup">
           <Signup />

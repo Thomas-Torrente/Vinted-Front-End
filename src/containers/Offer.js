@@ -1,10 +1,10 @@
 import React from "react";
 import OnePost from "../components/OnePost";
 
-const Offer = ({ data }) => {
+const Offer = ({ data, token, setUser }) => {
   return (
     <>
-      <OnePost data={data} />
+      <OnePost data={data} token={token} setUser={setUser} />
     </>
   );
 };

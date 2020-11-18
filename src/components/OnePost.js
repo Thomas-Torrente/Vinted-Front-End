@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 
-const OnePost = () => {
+const OnePost = ({ token, setUser }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState({});
   const { id } = useParams();
@@ -50,17 +50,28 @@ const OnePost = () => {
                 </p>
               );
             })}
-            <Link
-              to={{
-                pathname: "/payement",
-                state: {
-                  title: data.product_name,
-                  price: data.product_price,
-                },
-              }}
-            >
-              Acheter cette article
-            </Link>
+            {token ? (
+              <>
+                <Link
+                  className="buy-article"
+                  to={{
+                    pathname: "/payement",
+                    state: {
+                      title: data.product_name,
+                      price: data.product_price,
+                    },
+                  }}
+                >
+                  Acheter cette article
+                </Link>
+              </>
+            ) : (
+              <Link to="../login">
+                <button className="header-button button-login-signup">
+                  Se connecter
+                </button>
+              </Link>
+            )}
           </div>
         </div>
       </div>

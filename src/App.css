@@ -240,7 +240,8 @@
   text-align: justify;
 }
 
-.pay-btn {
+.pay-btn,
+.buy-article {
   margin-top: 8px;
   display: block;
   width: 100%;
@@ -260,5 +261,9 @@
   padding: 36px 20px;
   background-color: inherit;
   max-height: 100px;
+  text-align: center;
+}
+
+.buy-article {
   text-align: center;
 }
