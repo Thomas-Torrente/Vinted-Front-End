@@ -16,9 +16,11 @@ const PayementForm = () => {
       // Ici on demande à stripe de récupéré les donner bancaire rentrer par le user
 
       const stripeResponse = await stripe.createToken(CardElement, {
-        name: "'{id de l'acheteur}'",
+        name: "zebiiiii",
         // Demander la création d'un token via l'API Stripe
       });
+
+      console.log(stripResponse);
 
       const stripeToken = stripeResponse.token.id;
       //  on dit que stripToken est le token envoyer par stripe

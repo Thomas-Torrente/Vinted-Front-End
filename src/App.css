@@ -147,11 +147,6 @@
 }
 /* PUBLISH */
 
-.contenair-publish {
-  width: 1280px;
-  margin: 0 auto;
-}
-
 /* ONE OFFER */
 .offer-body {
   height: calc(100vh - 60px);
@@ -202,4 +197,23 @@
   padding: 0 16px;
   line-height: 36px;
   margin-top: 32px;
+}
+/* PUBLISH */
+.contenair-publish {
+  width: 1280px;
+  margin: 0 auto;
+}
+
+.file {
+  background-color: #fff;
+  padding: 24px;
+  margin: 20px 0;
+  box-shadow: 0 0 2px grey;
+  flex-direction: column;
+}
+
+.input-publish {
+  background-color: #fff;
+
+  flex-direction: column;
 }
