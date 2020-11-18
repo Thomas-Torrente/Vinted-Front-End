@@ -217,3 +217,40 @@
 
   flex-direction: column;
 }
+
+/* PAYEMENT */
+
+.payement-contenair {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 36px 20px;
+  background-color: #ebedee;
+}
+
+.payement-contenair h3 {
+  font-size: 20px;
+  line-height: 18px;
+  color: #999;
+  line-height: 18px;
+  color: #999;
+}
+
+.in-card {
+  padding: 24px;
+  text-align: justify;
+}
+
+.pay-btn {
+  margin-top: 8px;
+  display: block;
+  width: 100%;
+  font-size: 16px;
+  line-height: 22px;
+  height: 44px;
+  padding: 0 14px;
+  color: #fff;
+  border: 1px solid;
+  border-radius: 4px;
+  background: #09b1ba;
+  border-color: #09b1ba;
+}

@@ -8,16 +8,20 @@ const stripPromise = loadStripe("pk_test_5z9rSB8XwuAOihoBixCMfL6X");
 // tant que tu n'as pas fait le backend ici c'est la clé du réacteur
 const Payement = () => {
   const location = useLocation();
-  console.log(location);
+  // console.log(location);
 
   const { title, price } = location.state;
 
   return (
     <>
-      <h3>Récapitulatif de Commande :</h3>
-      Article : {title}
-      <br />
-      Prix de votre article : {price}€
+      <div className="payement-contenair">
+        <h3>Récapitulatif de Commande :</h3>
+        <div className="in-card">
+          Article : {title}
+          <br />
+          Prix de votre article : {price}€
+        </div>
+      </div>
       <Elements stripe={stripPromise}>
         <PayementForm title={title} price={price} />
       </Elements>

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
 
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const PayementForm = ({ title, price }) => {
   const [succed, setSucced] = useState(false);
@@ -13,11 +14,11 @@ const PayementForm = ({ title, price }) => {
   const whenSubmit = async (event) => {
     event.preventDefault();
     try {
-      const CardElement = elements.getElements(CardElement);
+      const cardElement = elements.getElement(CardElement);
       // Ici on demande à stripe de récupéré les donner bancaire rentrer par le user
 
-      const stripeResponse = await stripe.createToken(CardElement, {
-        name: "zebiiiii",
+      const stripeResponse = await stripe.createToken(cardElement, {
+        name: "",
         // Demander la création d'un token via l'API Stripe
       });
 
@@ -34,7 +35,7 @@ const PayementForm = ({ title, price }) => {
           amount: price,
         }
       );
-      if (sendResponse.data.status === "ggMan") {
+      if (sendResponse.data.status === "true") {
         // Si le payement a été acepter
         setSucced(true);
         // passer setSecced en true
@@ -46,14 +47,20 @@ const PayementForm = ({ title, price }) => {
   return (
     <div>
       {succed ? (
-        <p>Payement validé man</p>
+        <p>
+          Payement validé man, <Link to="/">≈Retourner à l'accueil</Link>
+        </p>
       ) : (
-        // si true alors afficher ca donc si le form payement a été accepter
-        <form onSubmit={whenSubmit}>
-          <CardElement />
-          {/* DOnné par stripe ca créer le form pour rentrer les numéro de carte ccv expiration */}
-          <button type="submit">Valider le Payement</button>
-        </form>
+        <div className="payement-contenair">
+          {/* // si true alors afficher ca donc si le form payement a été accepter */}
+          <form onSubmit={whenSubmit}>
+            <CardElement />
+            {/* DOnné par stripe ca créer le form pour rentrer les numéro de carte ccv expiration */}
+            <button className="pay-btn" type="submit">
+              Valider le Payement
+            </button>
+          </form>
+        </div>
         // DAns tous les autres cas afficher le form pour payer
       )}
     </div>
