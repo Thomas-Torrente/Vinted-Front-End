@@ -50,8 +50,16 @@ const OnePost = () => {
                 </p>
               );
             })}
-            <Link to="../payement">
-              <button>Acheter cette article</button>
+            <Link
+              to={{
+                pathname: "/payement",
+                state: {
+                  title: data.product_name,
+                  price: data.product_price,
+                },
+              }}
+            >
+              Acheter cette article
             </Link>
           </div>
         </div>

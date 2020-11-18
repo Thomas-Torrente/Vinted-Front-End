@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
+
 import axios from "axios";
 
-const PayementForm = () => {
+const PayementForm = ({ title, price }) => {
   const [succed, setSucced] = useState(false);
   // Succed est en false de base car on a pas encore payer
   const stripe = useStripe();
@@ -20,7 +21,7 @@ const PayementForm = () => {
         // Demander la création d'un token via l'API Stripe
       });
 
-      console.log(stripResponse);
+      console.log(stripeResponse);
 
       const stripeToken = stripeResponse.token.id;
       //  on dit que stripToken est le token envoyer par stripe
@@ -28,10 +29,12 @@ const PayementForm = () => {
         "https://lereacteur-vinted-api.herokuapp.com/payment",
         // On envoie une requete aux back
         {
-          stripeToken: stripeToken,
+          token: stripeToken,
+          title: title,
+          amount: price,
         }
       );
-      if (response.data.status === "ggMan") {
+      if (sendResponse.data.status === "ggMan") {
         // Si le payement a été acepter
         setSucced(true);
         // passer setSecced en true

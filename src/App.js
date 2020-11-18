@@ -11,6 +11,7 @@ import Signup from "./containers/Signup";
 import Login from "./containers/Login";
 import Publish from "./containers/Publish";
 import Header from "./components/Header";
+import Payement from "./containers/Payement";
 function App({ data, setData }) {
   const [token, setToken] = useState(Cookies.get("userToken") || null);
   const setUser = (tokenToSet) => {
@@ -39,6 +40,9 @@ function App({ data, setData }) {
         </Route>
         <Route path="/publish">
           <Publish token={token} setUser={setUser} />
+        </Route>
+        <Route path="/payement">
+          <Payement token={token} setUser={setUser} />
         </Route>
         <Route path="/">
           <Home data={data} setData={setData} />
