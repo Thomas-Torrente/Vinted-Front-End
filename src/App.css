@@ -254,3 +254,11 @@
   background: #09b1ba;
   border-color: #09b1ba;
 }
+
+.footer {
+  margin: 0 auto;
+  padding: 36px 20px;
+  background-color: inherit;
+  max-height: 100px;
+  text-align: center;
+}

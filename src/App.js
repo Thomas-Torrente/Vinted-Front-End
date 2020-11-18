@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Cookies from "js-cookie";
 
 import Home from "./containers/Home";
+import Footer from "./components/Footer";
 import Offer from "./containers/Offer";
 import Signup from "./containers/Signup";
 import Login from "./containers/Login";
@@ -48,6 +49,7 @@ function App({ data, setData }) {
           <Home data={data} setData={setData} />
         </Route>
       </Switch>
+      <Footer />
     </Router>
   );
 }
